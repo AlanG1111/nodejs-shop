@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: auto;
+    padding: 1rem;
+}
+
+form {
+    display: inline;
+}
+
+.centered {
+    text-align: center;
+}
+
+.image {
+    height: 20rem;
+}
+
+.image img {
+    height: 100%;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 1.5rem;
+    background-color: #00695c;
+}
+
+.main-header__nav {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.main-header__item-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-header__item {
+    margin: 0 1rem;
+    padding: 0;
+}
+
+.main-header__item a,
+.main-header__item button {
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border: none;
+    background: transparent;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active,
+.main-header__item button:hover,
+.main-header__item button:active {
+    color: #ffeb3b;
+}
+
+.mobile-nav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    max-width: 90%;
+    height: 100vh;
+    padding: 2rem 1rem 1rem 2rem;
+    transition: transform .3s ease-out;
+    transform: translateX(-100%);
+    background: white;
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}
+
+.mobile-nav__item-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-nav__item {
+    margin: 1rem;
+    padding: 0;
+}
+
+.mobile-nav__item a,
+.mobile-nav__item button {
+    font: inherit;
+    font-size: 1.5rem;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    border: none;
+    background: transparent;
+}
+
+.mobile-nav__item a:active,
+.mobile-nav__item a:hover,
+.mobile-nav__item a.active,
+.mobile-nav__item button:hover,
+.mobile-nav__item button:active {
+    color: white;
+    border-radius: 3px;
+    background: #00695c;
+}
+
+#side-menu-toggle {
+    font: inherit;
+    display: block;
+    padding: .5rem;
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+}
+
+#side-menu-toggle:focus {
+    outline: none;
+}
+
+#side-menu-toggle:active,
+#side-menu-toggle:hover {
+    color: #ffeb3b;
+    border-color: #ffeb3b;
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+}
+
+.grid {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
+}
+
+.card__header,
+.card__content {
+    padding: 1rem;
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+    margin: 0;
+}
+
+.card__image {
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+}
+
+.card__image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card__actions {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card__actions button,
+.card__actions a {
+    margin: 0 .25rem;
+}
+
+.btn {
+    font: inherit;
+    display: inline-block;
+    padding: .25rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #00695c;
+    border: 1px solid #00695c;
+    border-radius: 3px;
+    background: white;
+}
+
+.btn:hover,
+.btn:active {
+    color: white;
+    background-color: #00695c;
+}
+
+.btn.danger {
+    color: red;
+    border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+    color: white;
+    background: red;
+}
+
+.user-message {
+    width: 90%;
+    margin: auto;
+    padding: .5rem;
+    text-align: center;
+    border: 1px solid #4771fa;
+    border-radius: 3px;
+    background: #b9c9ff;
+}
+
+.user-message--error {
+    color: red;
+    border-color: red;
+    background: rgb(255, 176, 176);
+}
+
+.pagination {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 1rem;
+    padding: .5rem;
+    text-decoration: none;
+    color: #00695c;
+    border: 1px solid #00695c;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+    color: white;
+    background: #00695c;
+}
+
+@media (min-width: 768px) {
+    .main-header__nav {
+        display: flex;
+    }
+
+    #side-menu-toggle {
+        display: none;
+    }
+
+    .user-message {
+        width: 30rem;
+    }
+}
